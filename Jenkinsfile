@@ -23,7 +23,7 @@ pipeline {
         stage('SonarQube Analysis') {
               steps {
                         script {
-                            sh './gradle sonar -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}'
+                            sh ' gradle sonar -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}'
                         }
                     }
               }
