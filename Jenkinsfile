@@ -25,7 +25,7 @@ pipeline {
                     steps {
                         script {
                             // Configuração do SonarQube Scanner
-                            def scannerHome = tool 'SonarQube Scanner'  // Nome do SonarQube Scanner configurado no Jenkins
+                            def scannerHome = tool 'Scanner'  // Nome do SonarQube Scanner configurado no Jenkins
                             withSonarQubeEnv(SONARQUBE_SERVER) {
                                 sh "${scannerHome}/bin/sonar-scanner \
                                     -Dsonar.projectKey=project-seminario \
