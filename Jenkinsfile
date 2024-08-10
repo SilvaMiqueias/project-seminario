@@ -26,7 +26,7 @@ pipeline {
              steps {
                     script {
                        // Rodar testes e gerar relatórios JaCoCo
-                       sh './gradlew test jacocoTestReport'
+                       sh 'gradle test jacocoTestReport'
                     }
                  }
         }
