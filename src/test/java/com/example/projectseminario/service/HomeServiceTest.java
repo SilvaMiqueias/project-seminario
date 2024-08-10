@@ -36,14 +36,14 @@ public class HomeServiceTest {
 
     @Test
     public void testDiv() {
-        int exp = 2;
+        int exp = 3;
         int result = userService.div(2,1);
         assertEquals("Div: ", exp, result);
     }
 
-//    @Test
-//    public void testDivByZero() {
-//        assertThrows(ArithmeticException.class, () -> userService.div(1, 0));
-//    }
+    @Test
+    public void testDivByZero() {
+        assertThrows(ArithmeticException.class, () -> userService.div(1, 0));
+    }
 
 }
