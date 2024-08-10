@@ -6,22 +6,22 @@ import org.springframework.stereotype.Service;
 <span class="fc" id="L6">public class HomeService {</span>
 
     public Integer add(Integer a, Integer b){
-<span class="fc" id="L9">        return a + b;</span>
+<span class="nc" id="L9">        return a + b;</span>
     }
 
     public Integer sub(Integer a, Integer b){
-<span class="fc" id="L13">        return a - b;</span>
+<span class="nc" id="L13">        return a - b;</span>
     }
 
     public Integer mult(Integer a, Integer b){
-<span class="fc" id="L17">        return a * b;</span>
+<span class="nc" id="L17">        return a * b;</span>
     }
 
     public Integer div(Integer a, Integer b){
 <span class="pc bpc" id="L21" title="2 of 4 branches missed.">        if (a == 0 ||  b == 0) {</span>
-<span class="nc" id="L22">            throw new ArithmeticException(&quot;Cannot divide by zero&quot;);</span>
+<span class="fc" id="L22">            throw new ArithmeticException(&quot;Cannot divide by zero&quot;);</span>
         }
-<span class="fc" id="L24">        return a / b;</span>
+<span class="nc" id="L24">        return a / b;</span>
     }
 
 

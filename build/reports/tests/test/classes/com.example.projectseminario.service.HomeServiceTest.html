@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">4</div>
+<div class="counter">1</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.107s</div>
+<div class="counter">0.069s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,23 +78,8 @@
 </tr>
 </thead>
 <tr>
-<td class="success">testAdd()</td>
-<td class="success">0.080s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testDiv()</td>
-<td class="success">0.010s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testMult()</td>
-<td class="success">0.009s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testSub()</td>
-<td class="success">0.008s</td>
+<td class="success">testDivByZero()</td>
+<td class="success">0.069s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -102,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>19:14:29.971 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.projectseminario.service.HomeServiceTest]: HomeServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:14:30.277 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.projectseminario.ProjectSeminarioApplication for test class com.example.projectseminario.service.HomeServiceTest
+<pre>19:30:06.700 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.projectseminario.service.HomeServiceTest]: HomeServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:30:07.068 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.projectseminario.ProjectSeminarioApplication for test class com.example.projectseminario.service.HomeServiceTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -114,13 +99,13 @@
 
  :: Spring Boot ::                (v3.3.2)
 
-2024-08-10T19:14:32.516-03:00  INFO 8472 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : Starting HomeServiceTest using Java 17.0.8 with PID 8472 (started by micke in C:\Users\micke\OneDrive\workspace\trabalhos\test-jenkins\project-seminario)
-2024-08-10T19:14:32.520-03:00  INFO 8472 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-08-10T19:14:33.616-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2024-08-10T19:14:34.039-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2024-08-10T19:14:34.039-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2024-08-10T19:14:34.042-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2024-08-10T19:14:34.088-03:00  INFO 8472 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : Started HomeServiceTest in 2.183 seconds (process running for 6.455)
+2024-08-10T19:30:09.686-03:00  INFO 16440 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : Starting HomeServiceTest using Java 17.0.8 with PID 16440 (started by micke in C:\Users\micke\OneDrive\workspace\trabalhos\test-jenkins\project-seminario)
+2024-08-10T19:30:09.691-03:00  INFO 16440 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-08-10T19:30:10.883-03:00  INFO 16440 --- [project-seminario] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-10T19:30:11.359-03:00  INFO 16440 --- [project-seminario] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-10T19:30:11.359-03:00  INFO 16440 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-10T19:30:11.364-03:00  INFO 16440 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-08-10T19:30:11.416-03:00  INFO 16440 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : Started HomeServiceTest in 2.567 seconds (process running for 7.961)
 </pre>
 </span>
 </div>
@@ -132,7 +117,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.8</a> at 10 de ago. de 2024 19:14:34</p>
+<a href="http://www.gradle.org">Gradle 8.8</a> at 10 de ago. de 2024 19:30:11</p>
 </div>
 </div>
 </body>
