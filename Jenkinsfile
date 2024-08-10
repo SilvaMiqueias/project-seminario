@@ -13,8 +13,15 @@ pipeline {
             steps {
                script{
                 sh 'gradle build'
+                sh 'gradle clean build sonarqube'
                }
             }
+        }
+        stage('JaCoCo Report') {
+                    steps {
+                        // Publica o relatório JaCoCo
+                        recordJacoco()
+                    }
         }
         stage('Deploy') {
             steps {
