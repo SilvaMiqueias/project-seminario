@@ -24,13 +24,13 @@ pipeline {
 
         stage('JaCoCo Report') {
              steps {
-                     
+
                         jacoco(
                                            classPattern: '**/classes',
                                            execPattern: '**/build/jacoco.exec',
-                                           sourcePattern: '**/src/main/java'
+                                           sourcePattern: '**/src/main/java',
                                            inclusionPattern: '**/*.java'
-                                       )
+                            )
                     }
 
         }
@@ -59,7 +59,7 @@ pipeline {
                 jacoco(
                     classPattern: '**/classes',
                     execPattern: '**/build/jacoco.exec',
-                    sourcePattern: '**/src/main/java'
+                    sourcePattern: '**/src/main/java',
                     inclusionPattern: '**/*.java'
                 )
             }
