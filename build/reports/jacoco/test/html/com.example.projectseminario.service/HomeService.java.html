@@ -3,10 +3,27 @@
 import org.springframework.stereotype.Service;
 
 @Service
-<span class="nc" id="L6">public class HomeService {</span>
+<span class="fc" id="L6">public class HomeService {</span>
 
-    public String getName(){
-<span class="nc" id="L9">        return &quot;Retorna nome&quot;;</span>
+    public Integer add(Integer a, Integer b){
+<span class="fc" id="L9">        return a + b;</span>
     }
+
+    public Integer sub(Integer a, Integer b){
+<span class="fc" id="L13">        return a - b;</span>
+    }
+
+    public Integer mult(Integer a, Integer b){
+<span class="fc" id="L17">        return a * b;</span>
+    }
+
+    public Integer div(Integer a, Integer b){
+<span class="pc bpc" id="L21" title="2 of 4 branches missed.">        if (a == 0 ||  b == 0) {</span>
+<span class="nc" id="L22">            throw new ArithmeticException(&quot;Cannot divide by zero&quot;);</span>
+        }
+<span class="fc" id="L24">        return a / b;</span>
+    }
+
+
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
