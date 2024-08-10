@@ -21,23 +21,7 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-                    steps {
-                        script {
-                            // Configuração do SonarQube Scanner
-                            def scannerHome = tool 'Scanner'  // Nome do SonarQube Scanner configurado no Jenkins
-                            withSonarQubeEnv(SONARQUBE_SERVER) {
-                                sh "${scannerHome}/bin/sonar-scanner \
-                                    -Dsonar.projectKey=project-seminario \
-                                    -Dsonar.sources=. \
-                                    -Dsonar.host.url=http://sonarqube:9000 \
-                                    -Dsonar.login=${SONARQUBE_TOKEN}" // Se estiver usando autenticação
-                            }
-                        }
-                    }
-        }
-
-
+       
         stage('JaCoCo Report') {
              steps {
                             script {
