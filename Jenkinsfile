@@ -4,6 +4,7 @@ pipeline {
         HEROKU_API_KEY = credentials('heroku-api-key-id') // ID da credencial que você configurou
         SONARQUBE_URL = 'http://localhost:9000'
         SONARQUBE_TOKEN = credentials('sonar-token')
+        SONARQUBE_SERVER = 'SonarQube'  // Nome do SonarQube Server configurado no Jenkins
     }
     stages {
         stage('Checkout') {
@@ -21,12 +22,21 @@ pipeline {
         }
 
         stage('SonarQube Analysis') {
-              steps {
+                    steps {
                         script {
-                            sh ' gradle sonar -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}'
+                            // Configuração do SonarQube Scanner
+                            def scannerHome = tool 'SonarQube Scanner'  // Nome do SonarQube Scanner configurado no Jenkins
+                            withSonarQubeEnv(SONARQUBE_SERVER) {
+                                sh "${scannerHome}/bin/sonar-scanner \
+                                    -Dsonar.projectKey=project-seminario \
+                                    -Dsonar.sources=. \
+                                    -Dsonar.host.url=http://sonarqube:9000 \
+                                    -Dsonar.login=${SONARQUBE_TOKEN}" // Se estiver usando autenticação
+                            }
                         }
                     }
-              }
+        }
+
 
         stage('JaCoCo Report') {
              steps {
