@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.projectseminario.service.HomeServiceTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-08-10T22:14:34" hostname="DESKTOP-3C35L6B" time="0.128">
+  <properties/>
+  <testcase name="testAdd()" classname="com.example.projectseminario.service.HomeServiceTest" time="0.08"/>
+  <testcase name="testDiv()" classname="com.example.projectseminario.service.HomeServiceTest" time="0.01"/>
+  <testcase name="testSub()" classname="com.example.projectseminario.service.HomeServiceTest" time="0.008"/>
+  <testcase name="testMult()" classname="com.example.projectseminario.service.HomeServiceTest" time="0.009"/>
+  <system-out><![CDATA[19:14:29.971 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.projectseminario.service.HomeServiceTest]: HomeServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+19:14:30.277 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.projectseminario.ProjectSeminarioApplication for test class com.example.projectseminario.service.HomeServiceTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2024-08-10T19:14:32.516-03:00  INFO 8472 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : Starting HomeServiceTest using Java 17.0.8 with PID 8472 (started by micke in C:\Users\micke\OneDrive\workspace\trabalhos\test-jenkins\project-seminario)
+2024-08-10T19:14:32.520-03:00  INFO 8472 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T19:14:33.616-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-10T19:14:34.039-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-10T19:14:34.039-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-10T19:14:34.042-03:00  INFO 8472 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-08-10T19:14:34.088-03:00  INFO 8472 --- [project-seminario] [    Test worker] c.e.p.service.HomeServiceTest            : Started HomeServiceTest in 2.183 seconds (process running for 6.455)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
