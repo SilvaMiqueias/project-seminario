@@ -1,3 +1,15 @@
+.card{
+    box-shadow: 5px 4px beige;
+    padding: 5px;
+    border-radius: 5%;
+    & h1 {
+        font-size: 20px;
+        color: #FFFF;
+        font-weight: 400;
+        font-family: "Arial Black";
+    }
+}
+
 .footer{
     font-family: "Arial Black";
     font-size: 18px;

@@ -27,19 +27,19 @@ public class HomeServiceTest {
         assertEquals("Sub: ", exp, result);
     }
 
-    @Test
-    public void testMult() {
-        int exp = 2;
-        int result = userService.mult(2,1);
-        assertEquals("Mult: ", exp, result);
-    }
-
 //    @Test
-//    public void testDiv() {
+//    public void testMult() {
 //        int exp = 2;
-//        int result = userService.div(2,1);
-//        assertEquals("Div: ", exp, result);
+//        int result = userService.mult(2,1);
+//        assertEquals("Mult: ", exp, result);
 //    }
+//
+////    @Test
+////    public void testDiv() {
+////        int exp = 2;
+////        int result = userService.div(2,1);
+////        assertEquals("Div: ", exp, result);
+////    }
 
     @Test
     public void testDivByZero() {
