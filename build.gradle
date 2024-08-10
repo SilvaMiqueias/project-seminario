@@ -3,7 +3,7 @@ plugins {
     id 'org.springframework.boot' version '3.3.2'
     id 'io.spring.dependency-management' version '1.1.6'
     id 'jacoco'
-    id 'org.sonarqube' version '4.0.0.2929' // Verifique a versão mais recente
+    id "org.sonarqube" version "3.5.0.2730"// Verifique a versão mais recente
 }
 
 group = 'com.example'
@@ -47,7 +47,7 @@ sonarqube {
     properties {
         property "sonar.projectKey", "project-seminario" // Substitua pelo seu valor
         property "sonar.host.url", "http://localhost:9000" // URL do SonarQube
-        property "sonar.login", "sqp_8d8243a5489917a72e8deed1a4818bec422cf41c" // Token de autenticação do SonarQube
+        property "sonar.login", "sqp_771c08cf3bbfdbb5f3b0ea9c536c296d5efe723c" // Token de autenticação do SonarQube
         property "sonar.java.coveragePlugin", "jacoco"
     }
 }
