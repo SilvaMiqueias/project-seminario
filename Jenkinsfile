@@ -21,16 +21,13 @@ pipeline {
             }
         }
 
-       
+
         stage('JaCoCo Report') {
              steps {
-                            script {
-                                publishJacocoReport(
-                                    execPattern: '**/build/jacoco/test.exec',
-                                    classPattern: '**/build/classes/java/main',
-                                    sourcePattern: 'src/main/java'
-                                )
-                            }
+                    script {
+                       // Rodar testes e gerar relatórios JaCoCo
+                       sh './gradlew test jacocoTestReport'
+                    }
                  }
         }
 
@@ -52,6 +49,14 @@ pipeline {
         }
     }
     post {
+
+            always {
+                jacoco(
+                    classPattern: '**/classes',
+                    execPattern: '**/jacoco.exec',
+                    sourcePattern: '**/src/main/java'
+                )
+            }
         success {
             echo 'Deploy realizado com sucesso!'
         }
