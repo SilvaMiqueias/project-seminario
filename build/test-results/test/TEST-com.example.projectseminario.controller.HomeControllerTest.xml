@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.projectseminario.controller.HomeControllerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-08-10T16:34:55" hostname="DESKTOP-3C35L6B" time="2.185">
+  <properties/>
+  <testcase name="testIndex()" classname="com.example.projectseminario.controller.HomeControllerTest" time="2.185"/>
+  <system-out><![CDATA[13:34:51.957 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.projectseminario.controller.HomeControllerTest]: HomeControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:34:52.606 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.projectseminario.ProjectSeminarioApplication for test class com.example.projectseminario.controller.HomeControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.2)
+
+2024-08-10T13:34:53.936-03:00  INFO 23928 --- [project-seminario] [    Test worker] c.e.p.controller.HomeControllerTest      : Starting HomeControllerTest using Java 17.0.8 with PID 23928 (started by micke in C:\Users\micke\OneDrive\workspace\trabalhos\test-jenkins\project-seminario)
+2024-08-10T13:34:53.941-03:00  INFO 23928 --- [project-seminario] [    Test worker] c.e.p.controller.HomeControllerTest      : No active profile set, falling back to 1 default profile: "default"
+2024-08-10T13:34:55.194-03:00  INFO 23928 --- [project-seminario] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-08-10T13:34:55.758-03:00  INFO 23928 --- [project-seminario] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-08-10T13:34:55.759-03:00  INFO 23928 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-08-10T13:34:55.763-03:00  INFO 23928 --- [project-seminario] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2024-08-10T13:34:55.819-03:00  INFO 23928 --- [project-seminario] [    Test worker] c.e.p.controller.HomeControllerTest      : Started HomeControllerTest in 2.86 seconds (process running for 7.296)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
