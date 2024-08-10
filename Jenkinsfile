@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                script{
-                sh 'gradle build'
+                sh 'gradle clean build'
                }
             }
         }
@@ -24,11 +24,15 @@ pipeline {
 
         stage('JaCoCo Report') {
              steps {
-                    script {
-                       // Rodar testes e gerar relatórios JaCoCo
-                       sh 'gradle test jacocoTestReport'
+                     
+                        jacoco(
+                                           classPattern: '**/classes',
+                                           execPattern: '**/build/jacoco.exec',
+                                           sourcePattern: '**/src/main/java'
+                                           inclusionPattern: '**/*.java'
+                                       )
                     }
-                 }
+
         }
 
         stage('Deploy') {
@@ -51,10 +55,12 @@ pipeline {
     post {
 
             always {
+                junit '**/build/test-results/test/*.xml'
                 jacoco(
                     classPattern: '**/classes',
-                    execPattern: '**/jacoco.exec',
+                    execPattern: '**/build/jacoco.exec',
                     sourcePattern: '**/src/main/java'
+                    inclusionPattern: '**/*.java'
                 )
             }
         success {
