@@ -2,6 +2,8 @@ pipeline {
     agent any
     environment {
         HEROKU_API_KEY = credentials('heroku-api-key-id') // ID da credencial que você configurou
+        SONARQUBE_URL = 'http://localhost:9000'
+        SONARQUBE_TOKEN = credentials('sonar-token')
     }
     stages {
         stage('Checkout') {
@@ -9,20 +11,35 @@ pipeline {
                 checkout scm
             }
         }
+
         stage('Build') {
             steps {
                script{
                 sh 'gradle build'
-                sh 'gradle clean build sonarqube'
                }
             }
         }
-        stage('JaCoCo Report') {
-                    steps {
-                        // Publica o relatório JaCoCo
-                        recordJacoco()
+
+        stage('SonarQube Analysis') {
+              steps {
+                        script {
+                            sh './gradle sonar -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}'
+                        }
                     }
+              }
+
+        stage('JaCoCo Report') {
+             steps {
+                            script {
+                                publishJacocoReport(
+                                    execPattern: '**/build/jacoco/test.exec',
+                                    classPattern: '**/build/classes/java/main',
+                                    sourcePattern: 'src/main/java'
+                                )
+                            }
+                 }
         }
+
         stage('Deploy') {
             steps {
                 script {

@@ -1,0 +1,6 @@
+projectKey=project-seminario
+serverUrl=http://localhost:9000
+serverVersion=10.6.0.92116
+dashboardUrl=http://localhost:9000/dashboard?id=project-seminario
+ceTaskId=34f0143b-5af0-42c8-8cd0-89d563a66e0a
+ceTaskUrl=http://localhost:9000/api/ce/task?id=34f0143b-5af0-42c8-8cd0-89d563a66e0a
