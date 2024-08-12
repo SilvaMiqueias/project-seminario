@@ -42,8 +42,6 @@ pipeline {
                         // Login no Heroku
                         sh 'echo $HEROKU_API_KEY | heroku auth:token'
 
-           
-
                         // Push para o Heroku
                         sh 'git push heroku HEAD:main'
                     }
