@@ -34,12 +34,12 @@ public class HomeServiceTest {
 //        assertEquals("Mult: ", exp, result);
 //    }
 //
-////    @Test
-////    public void testDiv() {
-////        int exp = 2;
-////        int result = userService.div(2,1);
-////        assertEquals("Div: ", exp, result);
-////    }
+//    @Test
+//    public void testDiv() {
+//        int exp = 2;
+//        int result = userService.div(2,1);
+//        assertEquals("Div: ", exp, result);
+//    }
 
     @Test
     public void testDivByZero() {
