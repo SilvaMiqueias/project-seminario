@@ -47,10 +47,10 @@ dependencies {
 
 sonarqube {
     properties {
-        property "sonar.projectKey", "project-seminario" // Substitua pelo seu valor
-        property "sonar.host.url", "http://localhost:9000" // URL do SonarQube
-        property "sonar.login", "sqp_771c08cf3bbfdbb5f3b0ea9c536c296d5efe723c" // Token de autenticação do SonarQube
-        property "sonar.java.coveragePlugin", "jacoco"
+        property "sonar.projectKey", "SilvaMiqueias_project-seminario"
+        property "sonar.organization", "silvamiqueias"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.login", "d8d855b22193e2fb1dc132c7a9e26cd4c337a209"
     }
 }
 
