@@ -30,17 +30,15 @@ pipeline {
           stage('SonarCloud Analysis') {
                     steps {
                         script {
-
-
                             // A configuração do scanner para Gradle
-                            // withSonarQubeEnv(SONARQUBE_SERVER) {
-                            //     sh 'gradle sonarqube -Dsonar.projectKey=SilvaMiqueias_project-seminario -Dsonar.organization=silvamiqueias'
-                            // }
+                           withSonarQubeEnv(SONARQUBE_SERVER) {
+                               sh 'gradle sonarqube -Dsonar.projectKey=SilvaMiqueias_project-seminario -Dsonar.organization=silvamiqueias'
+                           }
                         }
                     }
-                }
+           }
 
-                stage('Quality Gate') {
+           stage('Quality Gate') {
                     steps {
                         script {
                             // Espera o SonarQube analisar e verificar o Quality Gate
@@ -49,7 +47,7 @@ pipeline {
                             }
                         }
                     }
-             }
+           }
 
         stage('Deploy') {
             steps {
