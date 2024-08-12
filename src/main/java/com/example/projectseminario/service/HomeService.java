@@ -25,7 +25,21 @@ public class HomeService {
     }
 
     public String getString(String ret){
+        if(ret.length() > 10){
+            return ret.concat(" maior que 10");
+        }
         return ret.concat("volta");
     }
-    
+
+    public String retornaSring(String ret){
+        if(ret.length() > 10){
+            return ret.concat(" maior que 10");
+        }
+        return ret.concat("volta");
+    }
+
+
+
+
+
 }
