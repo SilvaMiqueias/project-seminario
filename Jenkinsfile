@@ -11,9 +11,6 @@ pipeline {
             steps {
                 checkout scm
             }
-             steps {
-                  check novamente
-             }
         }
 
         stage('Build e Test') {
