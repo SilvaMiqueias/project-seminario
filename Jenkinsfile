@@ -3,8 +3,8 @@ pipeline {
     environment {
         HEROKU_API_KEY = credentials('heroku-api-key-id') // ID da credencial que você configurou
         SONARQUBE_URL = 'http://localhost:9000'
-        SONARQUBE_TOKEN = credentials('sonar-token')
-        SONARQUBE_SERVER = 'SonarQube'  // Nome do SonarQube Server configurado no Jenkins
+        SONARQUBE_TOKEN = credentials('sonar-cloud')
+        SONARQUBE_SERVER = 'SonarCloud'  // Nome do SonarQube Server configurado no Jenkins
     }
     stages {
         stage('Checkout') {
@@ -26,6 +26,30 @@ pipeline {
                             jacoco()
                     }
         }
+
+          stage('SonarCloud Analysis') {
+                    steps {
+                        script {
+
+
+                            // A configuração do scanner para Gradle
+                            // withSonarQubeEnv(SONARQUBE_SERVER) {
+                            //     sh 'gradle sonarqube -Dsonar.projectKey=SilvaMiqueias_project-seminario -Dsonar.organization=silvamiqueias'
+                            // }
+                        }
+                    }
+                }
+
+                stage('Quality Gate') {
+                    steps {
+                        script {
+                            // Espera o SonarQube analisar e verificar o Quality Gate
+                            timeout(time: 1, unit: 'HOURS') {
+                                waitForQualityGate abortPipeline: true
+                            }
+                        }
+                    }
+             }
 
         stage('Deploy') {
             steps {
