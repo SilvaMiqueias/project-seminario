@@ -11,7 +11,6 @@ pipeline {
             steps {
                 checkout scm
             }
-      
         }
 
         stage('Build e Test') {
