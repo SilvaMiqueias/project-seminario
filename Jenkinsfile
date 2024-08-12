@@ -11,9 +11,7 @@ pipeline {
             steps {
                 checkout scm
             }
-             steps {
-                  check novamente
-             }
+      
         }
 
         stage('Build e Test') {
@@ -42,7 +40,15 @@ pipeline {
                         // Login no Heroku
                         sh 'echo $HEROKU_API_KEY | heroku auth:token'
 
-           
+                           // Obtemos o nome da branch atual
+                              def branchName = sh(script: 'git rev-parse --abbrev-ref HEAD', returnStdout: true).trim()
+
+                               // Verificamos se a branch é 'main'
+                                  if (branchName == 'main') {
+                                    sh 'git remote add heroku https://git.heroku.com/project-seminario-prod.git || true'
+                                   } else {
+                                     sh 'git remote add heroku https://git.heroku.com/project-seminario.git|| true'
+                                   }
 
                         // Push para o Heroku
                         sh 'git push heroku HEAD:main'
