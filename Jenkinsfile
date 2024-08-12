@@ -54,12 +54,7 @@ pipeline {
     post {
             always {
                 junit '**/build/test-results/test/*.xml'
-                jacoco(
-                    classPattern: '**/classes',
-                    execPattern: '**/build/jacoco.exec',
-                    sourcePattern: '**/src/main/java',
-                    inclusionPattern: '**/*.java'
-                )
+                jacoco()
             }
         success {
             echo 'Deploy realizado com sucesso!'
