@@ -24,5 +24,8 @@ public class HomeService {
         return a / b;
     }
 
-
+    public String getString(String ret){
+        return ret.concat("volta");
+    }
+    
 }
