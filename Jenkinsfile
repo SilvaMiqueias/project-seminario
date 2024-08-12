@@ -23,12 +23,7 @@ pipeline {
 
         stage('JaCoCo Report') {
              steps {
-                     jacoco(
-                          classPattern: '**/classes',
-                          execPattern: '**/build/jacoco.exec',
-                          sourcePattern: '**/src/main/java',
-                          inclusionPattern: '**/*.java'
-                        )
+                            jacoco()
                     }
         }
 
@@ -57,15 +52,10 @@ pipeline {
         }
     }
     post {
-            always {
-                junit '**/build/test-results/test/*.xml'
-                jacoco(
-                    classPattern: '**/classes',
-                    execPattern: '**/build/jacoco.exec',
-                    sourcePattern: '**/src/main/java',
-                    inclusionPattern: '**/*.java'
-                )
-            }
+              always {
+                        junit '**/target/surefire-reports/*.xml'
+                        jacoco()
+                    }
         success {
             echo 'Deploy realizado com sucesso!'
         }
