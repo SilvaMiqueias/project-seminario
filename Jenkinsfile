@@ -30,11 +30,16 @@ pipeline {
           stage('SonarCloud Analysis') {
                     steps {
                         script {
-                            // A configuração do scanner para Gradle
-                           withSonarQubeEnv(SONARQUBE_SERVER) {
-                               sh 'gradle sonarqube -Dsonar.projectKey=SilvaMiqueias_project-seminario -Dsonar.organization=silvamiqueias'
-                           }
-                        }
+                                            withSonarQubeEnv(SONARQUBE_SERVER) {
+                                                sh '''
+                                                sonar-scanner \
+                                                  -Dsonar.projectKey=SilvaMiqueias_project-seminario \
+                                                  -Dsonar.organization=silvamiqueias \
+                                                  -Dsonar.host.url=https://sonarcloud.io \
+                                                  -Dsonar.login=${SONARQUBE_TOKEN}
+                                                '''
+                                            }
+                                        }
                     }
            }
 
