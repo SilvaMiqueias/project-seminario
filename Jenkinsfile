@@ -11,9 +11,12 @@ pipeline {
             steps {
                 checkout scm
             }
+             steps {
+                  check novamente
+             }
         }
 
-        stage('Build') {
+        stage('Build e Test') {
             steps {
                script{
                 sh 'gradle clean build'
@@ -21,18 +24,15 @@ pipeline {
             }
         }
 
-
         stage('JaCoCo Report') {
              steps {
-
-                        jacoco(
-                                           classPattern: '**/classes',
-                                           execPattern: '**/build/jacoco.exec',
-                                           sourcePattern: '**/src/main/java',
-                                           inclusionPattern: '**/*.java'
-                            )
+                     jacoco(
+                          classPattern: '**/classes',
+                          execPattern: '**/build/jacoco.exec',
+                          sourcePattern: '**/src/main/java',
+                          inclusionPattern: '**/*.java'
+                        )
                     }
-
         }
 
         stage('Deploy') {
@@ -41,9 +41,6 @@ pipeline {
                     withCredentials([string(credentialsId: 'heroku-api-key-id', variable: 'HEROKU_API_KEY')]) {
                         // Login no Heroku
                         sh 'echo $HEROKU_API_KEY | heroku auth:token'
-
-                        // Adicionar o remote do Heroku se ainda não estiver configurado
-                        sh 'git remote add heroku https://git.heroku.com/project-seminario.git|| true'
 
                         // Push para o Heroku
                         sh 'git push heroku HEAD:main'
