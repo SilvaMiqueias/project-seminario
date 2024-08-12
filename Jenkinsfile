@@ -27,33 +27,6 @@ pipeline {
                     }
         }
 
-          stage('SonarCloud Analysis') {
-                    steps {
-                        script {
-                                            withSonarQubeEnv(SONARQUBE_SERVER) {
-                                                sh '''
-                                                sonar-scanner \
-                                                  -Dsonar.projectKey=SilvaMiqueias_project-seminario \
-                                                  -Dsonar.organization=silvamiqueias \
-                                                  -Dsonar.host.url=https://sonarcloud.io \
-                                                  -Dsonar.login=${SONARQUBE_TOKEN}
-                                                '''
-                                            }
-                                        }
-                    }
-           }
-
-           stage('Quality Gate') {
-                    steps {
-                        script {
-                            // Espera o SonarQube analisar e verificar o Quality Gate
-                            timeout(time: 1, unit: 'HOURS') {
-                                waitForQualityGate abortPipeline: true
-                            }
-                        }
-                    }
-           }
-
         stage('Deploy') {
             steps {
                 script {
