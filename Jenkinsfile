@@ -52,10 +52,15 @@ pipeline {
         }
     }
     post {
-              always {
-                        junit '**/target/surefire-reports/*.xml'
-                        jacoco()
-                    }
+            always {
+                junit '**/build/test-results/test/*.xml'
+                jacoco(
+                    classPattern: '**/classes',
+                    execPattern: '**/build/jacoco.exec',
+                    sourcePattern: '**/src/main/java',
+                    inclusionPattern: '**/*.java'
+                )
+            }
         success {
             echo 'Deploy realizado com sucesso!'
         }
